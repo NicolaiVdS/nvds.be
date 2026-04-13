@@ -1,0 +1,129 @@
+baseURL = "https://nvds.be/"
+title   = "Nicolai Van der Storm"
+theme   = "hello-friend-ng"
+
+defaultContentLanguage = "en"
+paginate = 10
+rssLimit = 10
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+
+
+# ---------------------------
+# Params
+# ---------------------------
+[params]
+
+  # Date formats
+  dateform         = "Jan 2, 2006"
+  dateformShort    = "Jan 2"
+  dateformNum      = "02-01-2006"
+  dateformNumTime  = "02-01-2006 15:04"
+
+  homeSubtitle = "Software Engineer // Tinkerer"
+
+  description = "Nicolai Van der Storm's blog"
+  keywords    = "Nicolai, Nicolai VdS, Nicolai Van der Storm, Van der Storm, blog"
+
+  images = ["/images/me.png"]
+
+  enableSharingButtons      = true
+  enableGlobalLanguageMenu  = true
+  enableThemeToggle         = true
+  disableReadOtherPosts     = false
+
+
+  # ---------------------------
+  # Footer
+  # ---------------------------
+  [params.footer]
+    trademark = true
+    rss       = true
+    copyright = true
+    author    = true
+    cookies   = true
+
+    bottomText = [
+      "<a href=\"/contact\">Contact</a>",
+      "<a href=\"/privacy\">Privacy Policy</a>",
+      "Powered by <a href=\"https://gohugo.io\">Hugo</a>",
+    ]
+
+
+  # ---------------------------
+  # Portrait
+  # ---------------------------
+  [params.portrait]
+    path     = "/images/me.png"
+    alt      = "Portrait"
+    maxWidth = "150px"
+
+
+  # ---------------------------
+  # Social links
+  # ---------------------------
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/NicolaiVdS"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/NicolaiVdS"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://linkedin.com/in/nicolaivds/"
+
+
+# ---------------------------
+# Author
+# ---------------------------
+[author]
+  name = "Nicolai Van der Storm"
+
+
+# ---------------------------
+# Taxonomies
+# ---------------------------
+[taxonomies]
+  category = "blog"
+  tag      = "tags"
+  series   = "series"
+
+
+# ---------------------------
+# Languages
+# ---------------------------
+[languages]
+
+  [languages.en]
+    title = "Nicolai Van der Storm"
+    readOtherPosts = "Read other posts"
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+
+    [[languages.en.menu.main]]
+      identifier = "blog"
+      name       = "Blog"
+      url        = "/posts"
+
+    [[languages.en.menu.main]]
+      identifier = "about"
+      name       = "About"
+      url        = "/about/"
+
+    [languages.en.params]
+      subtitle = "Software Engineer // Tinkerer"
+
+      [languages.en.params.logo]
+        logoText     = "$ cd /home/"
+        logoHomeLink = "/"
+
+
+# ---------------------------
+# Media types
+# ---------------------------
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = ["asc"]
