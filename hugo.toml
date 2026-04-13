@@ -7,9 +7,8 @@ paginate = 10
 rssLimit = 10
 
 enableRobotsTXT = true
-enableGitInfo   = false
+enableGitInfo   = true
 enableEmoji     = true
-
 
 # ---------------------------
 # Params
@@ -34,12 +33,15 @@ enableEmoji     = true
   enableThemeToggle         = true
   disableReadOtherPosts     = false
 
+  [params.author]
+    name = "Nicolai VdS"
+
 
   # ---------------------------
   # Footer
   # ---------------------------
   [params.footer]
-    trademark = true
+    trademark = "2026"
     rss       = true
     copyright = true
     author    = true
