@@ -19,7 +19,7 @@ enableEmoji     = true
 # Params
 # ---------------------------
 [params]
-
+  gitUrl = "https://github.com/NicolaiVdS/nvds.be/commit/"
   # Date formats
   dateform         = "Jan 2, 2006"
   dateformShort    = "Jan 2"
