@@ -4,18 +4,43 @@ draft = false
 title = 'About Me'
 +++
 
+![Nicolai](/images/me.png)
 
-![][image-1]
+# Hi, I'm Nicolai 👋
 
-Hi, I am Nicolai 👋
+I’m a **Software Developer** and a chronic **tinkerer**. I’m driven by the "how", taking complex systems apart to see what makes them tick, then attempting to build them back better (or at least more interesting).
 
-I am a software developer but likes to tinker around with things.
+### The Journey
+I spent two years studying **Applied Mathematics**, which gave me a strong foundation in logic, modeling, and analytical thinking.
 
-### Projects
-Planing to make a nice-looking "My Projects" page on this website to write about all cool things I worked on. Meanwhile, I am working on a [blog](/blog) to write about the things i do.
+But I’ve always learned fastest by building. I’ve been programming since I was a kid, and I prefer hands-on experimentation over passive consumption.
 
-### Education
-I don't have a college degree and did 2 years of applied mathematics but have been tinkering and programming since I was a kid, I find formal education to be a waste of time and resources.
+I subscribe to the Arch Linux philosophy:
+If you want it done right, build it yourself - and understand every dependency along the way.
+(Yes, I use Arch, by the way.)
+---
 
-[image-1]:	/images/me.png
+### Current Project: FPV Simulator
+I'm currently building a custom FPV drone simulator from the ground up. 
+* **Engine:** Godot 4
+* **Language:** C#
+* **Physics:** Jolt Physics Engine (for that sweet, sweet performance)
+* **The Challenge:** Getting this thing to work 🤣.
 
+### My Toolkit
+| Category | Technologies |
+| :--- | :--- |
+| **Languages** | C#, Rust, TypeScript/JS, Python |
+| **Physics/Math** | Jolt Engine, Applied Mathematics |
+| **Environment** | Arch Linux, Godot, EdgeTX |
+| **Interests** | Low-level systems, FPV Drones, Automation |
+
+---
+
+### What I’m Up To
+* **[The Blog](/posts):** Where I document my struggles with Godot physics and Linux hardware passthrough.
+* **Tinkering:** If it has a circuit board or a compiler, I've probably tried to break it.
+
+---
+
+> "The best way to predict the future is to invent it."
