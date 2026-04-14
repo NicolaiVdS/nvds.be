@@ -18,6 +18,7 @@ But I’ve always learned fastest by building. I’ve been programming since I w
 I subscribe to the Arch Linux philosophy:
 If you want it done right, build it yourself - and understand every dependency along the way.
 (Yes, I use Arch, by the way.)
+
 ---
 
 ### Current Project: FPV Simulator
