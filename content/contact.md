@@ -122,8 +122,6 @@ cap-widget {
 <script src="https://captcha.nvds.be/assets/floating.js"></script> 
 
 <form id="contact-form" class="contact-form" action="https://api.nvds.be/v1/contact" method="POST">
-  <input type="hidden" name="_redirect" value="https://nvds.be/contact/thanks">
-  <input type="hidden" name="cap-token" id="cap-token-input">
   <input type="text" name="_hp_email" style="display:none">
 
   <div class="field">
@@ -145,17 +143,57 @@ cap-widget {
   <button type="button" id="submit-btn" data-cap-floating="#cap"  data-cap-floating-position="bottom">Send</button>
 </form>
 
-<script>
-    const form = document.getElementById('contact-form');
-    const capWidget = document.getElementById('cap');
-    const tokenInput = document.getElementById('cap-token-input');
+<div id="thank-you" style="display:none; margin-top:1rem;">
+  <h3>Thanks!</h3>
+  <p>Your message has been sent successfully.</p>
+</div>
 
-    capWidget.addEventListener('solve', function (event) {
-        tokenInput.value = event.detail.token;
-        if (form.checkValidity()) {
-            form.submit();
-        } else {
-            form.reportValidity();
+<script>
+const form = document.getElementById('contact-form');
+const capWidget = document.getElementById('cap');
+const submitBtn = document.getElementById('submit-btn');
+const thankYou = document.getElementById('thank-you');
+
+function setFormDisabled(state) {
+    [...form.elements].forEach(el => el.disabled = state);
+    submitBtn.disabled = state;
+}
+
+async function sendForm() {
+    const formData = new FormData(form);
+
+    setFormDisabled(true);
+    submitBtn.textContent = "Sending...";
+
+    try {
+        const res = await fetch(form.action, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams(formData).toString()
+        });
+
+        if (!res.ok) {
+            throw new Error("Request failed");
         }
-    });
+
+        // success UI
+        form.style.display = "none";
+        thankYou.style.display = "block";
+
+    } catch (err) {
+        alert("Failed to send message. Please try again.");
+        setFormDisabled(false);
+        submitBtn.textContent = "Send";
+    }
+}
+
+capWidget.addEventListener('solve', function (event) {
+    if (form.checkValidity()) {
+        sendForm();
+    } else {
+        form.reportValidity();
+    }
+});
 </script>
