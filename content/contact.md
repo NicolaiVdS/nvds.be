@@ -66,10 +66,12 @@ title = 'Contact'
 }
 </style>
 
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="https://captcha.nvds.be/assets/widget.js"></script>
+<script src="https://captcha.nvds.be/assets/floating.js"></script> 
 
-<form class="contact-form" action="https://forms.nvds.be/YOUR_FORM_KEY" method="POST">
+<form id="contact-form" class="contact-form" action="https://api.nvds.be/v1/contact" method="POST">
   <input type="hidden" name="_redirect" value="https://nvds.be/contact/thanks">
+  <input type="hidden" name="cap-token" id="cap-token-input">
   <input type="text" name="_hp_email" style="display:none">
 
   <div class="field">
@@ -87,6 +89,22 @@ title = 'Contact'
     <textarea id="message" name="message" required></textarea>
   </div>
 
-  <div class="cf-turnstile" data-sitekey="0x4AAAAAAC8xs2eekzuHnbKe"></div>
-  <button type="submit">Send</button>
+  <cap-widget id="cap" data-cap-api-endpoint="https://captcha.nvds.be/fcf0d0856d/"></cap-widget>
+
+  <button type="button" id="submit-btn" data-cap-floating="#cap" data-cap-floating-position="top">Send</button>
 </form>
+
+<script>
+    const form = document.getElementById('contact-form');
+    const capWidget = document.getElementById('cap');
+    const tokenInput = document.getElementById('cap-token-input');
+
+    capWidget.addEventListener('solve', function (event) {
+        tokenInput.value = event.detail.token;
+        if (form.checkValidity()) {
+            form.submit();
+        } else {
+            form.reportValidity();
+        }
+    });
+</script>
