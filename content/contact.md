@@ -64,6 +64,58 @@ title = 'Contact'
   background: rgba(255,255,255,0.1);
   border-color: rgba(255,255,255,0.6);
 }
+
+/* ── Light mode ── */
+[data-theme="light"] .contact-form input,
+[data-theme="light"] .contact-form textarea {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.03);
+}
+[data-theme="light"] .contact-form input:focus,
+[data-theme="light"] .contact-form textarea:focus {
+  border-color: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.05);
+}
+[data-theme="light"] .contact-form button {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+[data-theme="light"] .contact-form button:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Dark mode (default) */
+cap-widget {
+  --cap-background: #2a2a2a;
+  --cap-border-color: rgba(255, 255, 255, 0.1);
+  --cap-border-radius: 8px;
+  --cap-widget-height: 80px;
+  --cap-widget-width: 230px;
+  --cap-widget-padding: 14px;
+  --cap-gap: 15px;
+  --cap-color: #e8e8e8;
+  --cap-checkbox-size: 22px;
+  --cap-checkbox-border: 1px solid rgba(255, 255, 255, 0.2);
+  --cap-checkbox-border-radius: 5px;
+  --cap-checkbox-background: rgba(255, 255, 255, 0.05);
+  --cap-checkbox-margin: 2px;
+  --cap-font: system-ui, -apple-system, sans-serif;
+  --cap-spinner-color: #e8e8e8;
+  --cap-spinner-background-color: rgba(255, 255, 255, 0.1);
+  --cap-spinner-thickness: 3px;
+}
+
+/* Light mode */
+[data-theme="light"] cap-widget {
+  --cap-background: #f4f4f4;
+  --cap-border-color: rgba(0, 0, 0, 0.1);
+  --cap-color: #1a1a1a;
+  --cap-checkbox-border: 1px solid rgba(0, 0, 0, 0.2);
+  --cap-checkbox-border-radius: 5px;
+  --cap-checkbox-background: rgba(0, 0, 0, 0.03);
+  --cap-spinner-color: #1a1a1a;
+  --cap-spinner-background-color: rgba(0, 0, 0, 0.08);
+}
 </style>
 
 <script src="https://captcha.nvds.be/assets/widget.js"></script>
@@ -90,8 +142,7 @@ title = 'Contact'
   </div>
 
   <cap-widget id="cap" data-cap-api-endpoint="https://captcha.nvds.be/fcf0d0856d/"></cap-widget>
-
-  <button type="button" id="submit-btn" data-cap-floating="#cap" data-cap-floating-position="top">Send</button>
+  <button type="button" id="submit-btn" data-cap-floating="#cap"  data-cap-floating-position="bottom">Send</button>
 </form>
 
 <script>
